@@ -8,35 +8,36 @@ public class ParkingTicket
 {
    public static void main(String[] args) throws IOException 
    {
-	   Integer ticket = 0;
+	   //initializes the ticket amount
+	   int ticket = 0;
 	   
 	   
 	   System.out.println("Enter the date the fine is paid. Input month day and year separated by spaces");
-	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	   int paidDateArray[] = new int[3];
-	   String[] paidDate = br.readLine().split(" ");
+	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //creates the reader to read in the person's input
+	   int paidDateArray[] = new int[3]; //initializes an array that will contain the date paid
+	   String[] paidDate = br.readLine().split(" "); //will take the person's input and split it into a string array
 	   for (int i = 0; i < 3; i++) {
-		   paidDateArray[i] = Integer.parseInt(paidDate[i]);
+		   paidDateArray[i] = Integer.parseInt(paidDate[i]);// turns the numbers in the string array into ints and adds to the int array
        }
 
 	   
 	   System.out.println("Enter the date the fine was due. Input day month and year separated by spaces");
 	   
-	   int dueDateArray[] = new int[3];
-	   String[] dueDate = br.readLine().split(" ");
+	   int dueDateArray[] = new int[3]; //initializes an array that will contain the date due
+	   String[] dueDate = br.readLine().split(" ");//will take the person's input and split it into a string array
 	   for (int i = 0; i < 3; i++) {
-		   dueDateArray[i] = Integer.parseInt(dueDate[i]);
+		   dueDateArray[i] = Integer.parseInt(dueDate[i]); // turns the numbers in the string array into ints and adds to the int array
        }
 	  
-	   System.out.println("Enter the fine");
+	   System.out.println("Enter the parking ticket amount");
 	   
-	    String tic = br.readLine();
-	    int parkingTicket = Integer.parseInt(tic);
+	    String tic = br.readLine(); // reads in the parking ticket amount 
+	    int parkingTicket = Integer.parseInt(tic); //turns the parking ticket string into an int
 	   
 	   
-	   ticket = calculateTicket(paidDateArray, dueDateArray, parkingTicket);
+	   ticket = calculateTicket(paidDateArray, dueDateArray, parkingTicket); //Calculates the total ticket amount
 	   
-	   System.out.println(ticket);
+	   System.out.println(ticket);//prints out the result
    }
    
   public static int calculateTicket(int paidDate[], int dueDate[], int originalAmount)
